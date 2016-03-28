@@ -1,2 +1,30 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class="col-md-5 col-md-4-offset">
+  <%= form_for(@user) do |f| %>
+  <%= f.label :first_name, "First Name*" %>
+  <%= f.text_field :first_name, placeholder: "First Name", class: 'form-control', autofocus: true %>
+
+  <%= f.label :last_name, "Last Name*" %>
+  <%= f.text_field :last_name, placeholder: "Last Name", class: 'form-control' %>
+
+  <%= f.label :email, "Email*" %>
+  <%= f.text_field :email, placeholder: "Email", class: 'form-control' %>
+
+  <%= f.label :location, "Location" %>
+  <%= f.text_field :location, placeholder: "Location", class: 'form-control' %>
+
+  <br />
+
+  <%= f.label :gender, "Gender" %>
+  <%= f.select :gender, options_for_select([['Male', 1], ['Female', 2], ['Other', 3]], selected: :gender ) %>
+
+  <br />
+  <br />
+
+  <%= f.label :dob, "Date of birth*" %>
+  <%= f.date_field :dob, placeholder: "Date of birth", class: 'form-control' %>  
+
+  <br />
+
+    <%= f.submit "Create", class: 'btn btn-sm btn-success' %>
+<% end %>
+</div>
